@@ -1,0 +1,184 @@
+{
+  "date": "2026-10-18",
+  "revision": "E",
+  "status": "Prototype: CAD checks passed; physical Rev E testing pending",
+  "source": "hardware/rev-e/Resol_VBus_RevE",
+  "board": {
+    "width_mm": 64,
+    "height_mm": 50,
+    "layers": 2,
+    "thickness_mm": 1.6,
+    "copper_um_per_side": 35,
+    "footprints": 51,
+    "pads": 137,
+    "nets": 32,
+    "trace_segments": 206,
+    "vias": 182
+  },
+  "checks": {
+    "erc_errors": 0,
+    "erc_warnings": 0,
+    "drc_errors": 0,
+    "drc_warnings": 0,
+    "unrouted": 0,
+    "schematic_pcb_mismatches": 0,
+    "shorted_nets": 0,
+    "single_pin_nets": 0,
+    "orphan_items": 0,
+    "symbol_overlaps": 0,
+    "physical_pin_net_assignments": 52,
+    "critical_part_numbers": 9,
+    "regression_tests_passed": 3
+  },
+  "assembly": {
+    "native_positions": 38,
+    "smt_positions": 35,
+    "test_points_excluded_from_bom_and_positions": true,
+    "smt_positions_match_native_coordinates": true
+  },
+  "schematic": {
+    "sheets": 1,
+    "paper": "A3",
+    "visual_check": "Schematic render inspected; blocks fit the page and labels are readable.",
+    "blocks": [
+      "Isolated power supply",
+      "VBus protection and receiver",
+      "Digital isolator and ESP module",
+      "TX startup/undervoltage inhibit and bus sink",
+      "Test points"
+    ],
+    "local_connections": "Bridge, sense filter, hysteresis, power and TX connections are shown with wires. RX_REF and some bypass connections use matching labels.",
+    "netlist": "U3 uses pin1=RX_REF and pin4=RX_ISO. Corrected physical pin/net relationships checked.",
+    "remaining_limits": "No complete block-movement verification or full physical qualification."
+  },
+  "layout_checks": [
+    {
+      "item": "Ground return paths",
+      "status": "Partly checked",
+      "notes": "Both copper layers inspected. U3 has a continuous isolated ground plane beneath it. Ground domains remain separate. No exhaustive fast-edge return-path analysis."
+    },
+    {
+      "item": "Decoupling",
+      "status": "Partly checked",
+      "notes": "Bypass capacitors are close to their ICs. Exact loop inductance and every manufacturer layout example have not been checked."
+    },
+    {
+      "item": "DC/DC converter layout",
+      "status": "Internal module layout not checked",
+      "notes": "The sealed RECOM module contains the switching circuit. Its external input/output capacitors are nearby."
+    },
+    {
+      "item": "Thermal performance",
+      "status": "Not fully tested",
+      "notes": "No worst-case temperature, load or enclosure thermal measurements."
+    },
+    {
+      "item": "Current capacity",
+      "status": "Partly checked",
+      "notes": "The 0.5 mm branch to TP7 is a probe connection, not a series bottleneck in the main supply. Peak-current and temperature-rise margins have not been fully calculated."
+    },
+    {
+      "item": "Controlled-impedance pairs",
+      "status": "Not applicable",
+      "notes": "The carrier has no high-speed differential route requiring impedance or length matching."
+    },
+    {
+      "item": "Antenna clearance",
+      "status": "Not fully tested",
+      "notes": "Module and enclosure RF performance, including the S3 Mini, need physical testing."
+    },
+    {
+      "item": "EMC",
+      "status": "Not tested",
+      "notes": "No emissions or immunity measurements."
+    },
+    {
+      "item": "Ground stitching",
+      "status": "Partly checked",
+      "notes": "Front/back ground pours are stitched within their own domains. No visible bridge across the isolation gap; via placement has not been validated by EMC testing."
+    },
+    {
+      "item": "Via-in-pad process",
+      "status": "Not fully checked",
+      "notes": "No exhaustive check of every via-to-pad intersection or assembler-specific process."
+    },
+    {
+      "item": "Test-point access",
+      "status": "Partly checked",
+      "notes": "Nine test points cover supplies, grounds, RX, TX gate and rectified bus. Probe and module clearances still need checking on an assembled board."
+    }
+  ],
+  "automated_check_notes": [
+    "Generic requests for 100 nF on VBUS_A, VBUS_B and VBUS_RECT were rejected: these carry bus signaling and are not ordinary supply rails.",
+    "The MAX809 has a push-pull reset output and an intentional pulldown; an open-drain reset pull-up is not required.",
+    "Module supply decoupling also depends on the fitted ESP module and needs testing with that module."
+  ],
+  "manufacturing_files": {
+    "gerber_layers": 7,
+    "drill_files": [
+      "PTH",
+      "NPTH"
+    ],
+    "npth": "Valid empty file; current holes are plated.",
+    "zone_fill": "Gerbers exported with KiCad --check-zones.",
+    "files": [
+      {
+        "file": "Resol_VBus_RevE-B_Cu.gbl",
+        "bytes": 97345,
+        "sha256": "e51409ea333b8c71f93914489b3e785671e5333e3ac9ff82135a7c9c7d48d965"
+      },
+      {
+        "file": "Resol_VBus_RevE-B_Mask.gbs",
+        "bytes": 2063,
+        "sha256": "b3d0c155e43cbb146784b8907713515c644224b7cac684200baa7226b74b3cb2"
+      },
+      {
+        "file": "Resol_VBus_RevE-B_Silkscreen.gbo",
+        "bytes": 27602,
+        "sha256": "291e2a02fdfaf5a1576bd93d0a04f50bd79e2f496c5a30254a2fcb288fcfb17a"
+      },
+      {
+        "file": "Resol_VBus_RevE-Edge_Cuts.gm1",
+        "bytes": 905,
+        "sha256": "cc919038f457a02923ed1b68dafec92bcd404b332d12da5438f4ff7fb868ea40"
+      },
+      {
+        "file": "Resol_VBus_RevE-F_Cu.gtl",
+        "bytes": 346389,
+        "sha256": "0e5792252f0878cb3f3348b6425693e545f25bfea94f09073fbe9a381a90ac2d"
+      },
+      {
+        "file": "Resol_VBus_RevE-F_Mask.gts",
+        "bytes": 7651,
+        "sha256": "5751d896008f7c1cad4060002b1e454d2c48fb9c42cb7e24c0c676cce942e2e2"
+      },
+      {
+        "file": "Resol_VBus_RevE-F_Silkscreen.gto",
+        "bytes": 89129,
+        "sha256": "1b87acbd09af913d85e33cdc872cec16d4188870a2ecf211811ba73f06e35f91"
+      },
+      {
+        "file": "Resol_VBus_RevE-NPTH.drl",
+        "bytes": 264,
+        "sha256": "ab9651904863b56905767d8634cb5634ed82ff7e8226f6759ac6354c91f0ec16"
+      },
+      {
+        "file": "Resol_VBus_RevE-PTH.drl",
+        "bytes": 3063,
+        "sha256": "ea0bad805682faa90ae4958df6abac748d2693fbd108050a748552bddfc421d4"
+      },
+      {
+        "file": "Resol_VBus_RevE-job.gbrjob",
+        "bytes": 2491,
+        "sha256": "042f9350d92c668a4ea3cda8c433033911c46f57a18d1a882fef5e6be5f825c2"
+      }
+    ]
+  },
+  "limitations": [
+    "Rev E has not yet been manufactured or bench-tested.",
+    "No complete thermal, RF, EMC or safety-isolation qualification.",
+    "S3 Mini operation and enclosure fit are not physically verified.",
+    "No separate Gerber-viewer render or exhaustive solder-mask aperture comparison.",
+    "The optional RECOM STEP model is not included."
+  ]
+}

@@ -1,0 +1,18 @@
+*.kicad_prl
+~*.lck
+*-backups/
+*.bak
+__pycache__/
+build/
+validation/intake*
+validation/process-baseline.txt
+# Manufacturer CAD model: redistribution permission has not been established.
+hardware/rev-e/ResolVBusD.3dshapes/
+
+# Keep local iteration logs and histories out of the public repository.
+/validation/*
+!/validation/publication-20261018/
+/validation/publication-20261018/*
+!/validation/publication-20261018/review.md
+!/validation/publication-20261018/acceptance.json
+!/validation/publication-20261018/manifest.json

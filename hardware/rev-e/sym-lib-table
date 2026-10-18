@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+
+  (lib (name "ResolVBusD") (type "KiCad") (uri "${KIPRJMOD}/ResolVBusD.kicad_sym") (options "") (descr "")))
