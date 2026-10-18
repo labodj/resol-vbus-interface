@@ -55,8 +55,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3739,
-      "sha256": "4b13bcb60af663a79367d4fbdeb7f49972661cf105af621d45eabd12660b757b"
+      "bytes": 4036,
+      "sha256": "e20868757ae522b600324ebf21c7424cb7e589b9a09158d4b5f7719a5d840b8c"
     },
     {
       "path": "THIRD_PARTY.md",
@@ -77,6 +77,11 @@
       "path": "docs/fabrication.md",
       "bytes": 2078,
       "sha256": "05066b664a9a88c9b9ac0445bfcf0816413de33cba1ab8835a655f24618fb79a"
+    },
+    {
+      "path": "docs/images/assembled-prototype.jpg",
+      "bytes": 1376603,
+      "sha256": "0d801393f55369af9f5875f0ceb0ae2a619e5f7ae902e34142e529d9e3c1e6f8"
     },
     {
       "path": "docs/images/pcb-bottom.png",

@@ -8,7 +8,10 @@ The board takes a socketed **LOLIN D1 mini** or **LOLIN S3 Mini** and runs from
 5 V. An isolated DC/DC converter and digital isolator keep the VBus side
 electrically separate from the ESP and its USB connection.
 
-![Rev E PCB top view](docs/images/pcb-top.png)
+<img src="docs/images/assembled-prototype.jpg" alt="My assembled VBus interface connected to the solar controller" width="600">
+
+*My assembled prototype connected to the solar controller. This is an earlier
+revision that needed a small wiring rework; the published design files are Rev E.*
 
 ## Get started
 
@@ -38,7 +41,7 @@ approximately 20 cm VBus cable.
 **Rev E is a prototype:** its CAD checks pass, but I have not yet assembled or
 bench-tested this revision. Other controllers, longer cables and the S3 Mini
 need their own tests. See [validation](docs/validation.md) for the checks and
-remaining limits. The image above is a CAD view, not a photograph.
+remaining limits. The Rev E layout below is a CAD view.
 
 ## Firmware
 
@@ -54,6 +57,10 @@ for a bus grant before transmitting.
 I am developing the ESPHome TX support separately. This repository contains
 the hardware, not a ready-to-flash firmware image. It does not imply that the
 standard ESPHome VBus component already supports transmitting settings.
+
+## Rev E layout
+
+![Rev E PCB top view](docs/images/pcb-top.png)
 
 ## Editing the design
 
