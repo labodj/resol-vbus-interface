@@ -1,24 +1,35 @@
-# Isolated RESOL VBus interface
+# RESOL VBus interface
 
 I designed this board to connect my **RESOL DeltaSol CS Plus** solar controller to
 ESPHome and Home Assistant, with hardware for both receiving and transmitting
 VBus messages.
 
-The board takes a socketed **LOLIN D1 mini** or **LOLIN S3 Mini** and runs from
-5 V. An isolated DC/DC converter and digital isolator keep the VBus side
-electrically separate from the ESP and its USB connection.
+Both versions use a socketed **LOLIN D1 mini or S3 Mini**, a 5 V supply and the same RX/TX firmware pin mapping. Choose the board by how the controller and ESP must be grounded.
 
-<img src="docs/images/assembled-prototype.jpg" alt="My assembled VBus interface connected to the solar controller" width="600">
+| | Isolated (Rev E design files) | ECO Rev A |
+|---|---|---|
+| Power and UART | RECOM isolated DC/DC, bus-side regulator and digital isolator | Receiver and TX logic run from the module’s 3.3 V rail |
+| Grounding | ESP/USB ground is separated from the VBus circuit | USB, J1 ground and the negative output of the VBus bridge are connected |
+| Assembly | 35 SMT components | 26 SMT components |
+| Test status | An isolated prototype has operated in the field on a DeltaSol CS Plus | CAD checks passed; first assembled-board and field tests are pending |
+| KiCad and schematic | [Project](hardware/rev-e/Resol_VBus_RevE.kicad_pro) · [PDF](docs/schematic.pdf) | [Project](hardware/eco-rev-a/RESOL_VBus_ECO_RevA.kicad_pro) · [PDF](hardware/eco-rev-a/RESOL_VBus_ECO_RevA.pdf) |
+| Fabrication | [Gerber ZIP](fabrication/Resol_VBus_RevE_Gerbers.zip) · [BOM](fabrication/bom.csv) · [CPL](fabrication/cpl.csv) | [Gerber + stencil ZIP](fabrication/eco-rev-a/RESOL_VBus_ECO_RevA_Gerbers.zip) · [BOM](hardware/eco-rev-a/BOM.csv) · [CPL](fabrication/eco-rev-a/cpl.csv) |
 
-*My assembled prototype connected to the solar controller. This is an earlier
-revision that needed a small wiring rework; the published design files are Rev E.*
+Choose the isolated board when the grounding of the controller or a USB-connected PC is unknown. Choose ECO when a common ground is acceptable. On both boards, power from **J1 or USB, one source at a time**. J1 and J2 use identical connectors; label the power and VBus cables.
 
-## Get started
+| KiCad 3D view | Isolated Rev E | ECO Rev A |
+|---|---|---|
+| Front | ![Rev E front showing the isolated converter and UART isolator](docs/images/iso-3d.png) | ![ECO Rev A front showing the receiver, transmitter and common-ground marking](docs/images/eco-3d.png) |
+| Back | ![Rev E back showing separate VBus and MCU ground areas](docs/images/iso-3d-back.png) | ![ECO Rev A back with the common-ground marking](docs/images/eco-3d-back.png) |
 
-- **Build a board:** download the [Rev E prototype release](https://github.com/labodj/resol-vbus-interface/releases/tag/rev-e-prototype-1), then read the [fabrication notes](docs/fabrication.md) and [assembly guide](docs/assembly.md).
-- **Explore the design:** open the [KiCad 10 project](hardware/rev-e/Resol_VBus_RevE.kicad_pro) or view the [schematic PDF](docs/schematic.pdf).
-- **Understand the circuit:** see [how it works](docs/circuit.md).
-- **Check the parts:** use the [BOM for one board](fabrication/bom.csv) and [SMT placement file](fabrication/cpl.csv).
+The photograph below shows the earlier isolated prototype used in the installation.
+
+<img src="docs/images/assembled-prototype.jpg" alt="Assembled isolated prototype connected to the solar controller" width="600">
+
+## Build notes
+
+- **Isolated:** [prototype release](https://github.com/labodj/resol-vbus-interface/releases/tag/rev-e-prototype-1), [fabrication](docs/fabrication.md), [assembly](docs/assembly.md) and [circuit description](docs/circuit.md).
+- **ECO:** [fabrication package and checks](fabrication/eco-rev-a/README.md), [wiring and first power-up](hardware/eco-rev-a/README.md).
 
 ## Rev E at a glance
 
@@ -38,15 +49,13 @@ cables. Use either USB power or external 5 V, **never both at once**. Keep
 The target controller is a DeltaSol CS Plus running firmware 1.11, with an
 approximately 20 cm VBus cable.
 
-**Rev E is a prototype:** its CAD checks pass, but I have not yet assembled or
-bench-tested this revision. Other controllers, longer cables and the S3 Mini
-need their own tests. See [validation](docs/validation.md) for the checks and
-remaining limits. The Rev E layout below is a CAD view.
+Only the isolated design has field experience. The photographed unit is an earlier isolated revision that received a small wiring rework. The [Rev E validation record](docs/validation.md) documents the published CAD revision. ECO Rev A is a separate common-ground prototype awaiting hardware validation.
+
 
 ## Firmware
 
 VBus uses UART at **9600 baud, 8N1, non-inverted**. TX must idle HIGH; driving it
-LOW enables the bus sink when the isolated supply is ready. Firmware must wait
+LOW enables the bus sink once the bus-side supervisor releases the TX inhibit. Firmware must wait
 for a bus grant before transmitting.
 
 | Module | RX GPIO | TX GPIO | Rev E status |
@@ -58,10 +67,6 @@ I am developing the ESPHome TX support separately. This repository contains
 the hardware, not a ready-to-flash firmware image. It does not imply that the
 standard ESPHome VBus component already supports transmitting settings.
 
-## Rev E layout
-
-![Rev E PCB top view](docs/images/pcb-top.png)
-
 ## Editing the design
 
 Install KiCad 10 or newer with its standard libraries and open the `.kicad_pro`
@@ -70,6 +75,10 @@ included; a missing model affects the 3D view only. See [third-party notices](TH
 
 The [maintenance notes](docs/manual-review.md) explain test-point exclusions
 and the checks to run after changes.
+
+## Citation
+
+If you use this design in a publication, cite it using the [project citation metadata](CITATION.cff). Include the board revision so readers can identify the circuit you used.
 
 ## Background and license
 

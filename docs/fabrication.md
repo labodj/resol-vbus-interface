@@ -1,7 +1,6 @@
 # Fabricating Rev E
 
-Download `fabrication/Resol_VBus_RevE_Gerbers.zip` from the tagged prototype
-release. It contains seven Gerber layers (front/back copper, front/back solder
+Download the [current Rev E Gerber ZIP](../fabrication/Resol_VBus_RevE_Gerbers.zip) for the layout shown in this repository. The tagged prototype release preserves the earlier artwork. It contains seven Gerber layers (front/back copper, front/back solder
 mask, front/back silkscreen and Edge.Cuts), plated/non-plated Excellon drill
 files and a Gerber job file. The NPTH file is valid and empty: the current
 mounting holes and connectors use plated holes.
@@ -17,7 +16,7 @@ mounting holes and connectors use plated holes.
   terminals. Check screw/washer clearance on the assembled board.
 
 Check the archive checksum
-against the release manifest before ordering. Inspect the uploaded layer/drill
+against the [current source and output manifest](../fabrication/manifest.json) before ordering. Inspect the uploaded layer/drill
 preview, board outline and mounting holes at the fabricator.
 
 ## Assembly files

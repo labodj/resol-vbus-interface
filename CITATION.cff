@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you build on this design or use it in a publication, please cite it using the metadata below."
+title: "RESOL VBus interface"
+authors:
+  - family-names: "Labardi"
+    given-names: "Jacopo"
+repository-code: "https://github.com/labodj/resol-vbus-interface"
+url: "https://github.com/labodj/resol-vbus-interface"
+license-url: "https://github.com/labodj/resol-vbus-interface/blob/main/LICENSE.md"
+abstract: >-
+  KiCad hardware designs for connecting a RESOL VBus solar controller to a
+  LOLIN D1 mini or S3 Mini. The isolated and common-ground ECO boards support
+  receiving and transmitting VBus messages.
+keywords:
+  - open-source hardware
+  - KiCad
+  - RESOL VBus
+  - solar thermal
+  - ESPHome
+  - Home Assistant
