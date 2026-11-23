@@ -1,0 +1,70 @@
+{
+  "board": "Resol_VBus_RevE",
+  "date": "2026-11-23",
+  "kicad": "10.0.8",
+  "qualification": "CAD-checked Rev E; field testing applies to an earlier isolated prototype",
+  "source_sha256": {
+    "hardware/rev-e/Resol_VBus_RevE.kicad_pcb": "017ea990f4c68947183ede7362482be4c12ad91519c253770fa4c7330e2cc51f",
+    "hardware/rev-e/Resol_VBus_RevE.kicad_sch": "c009fb9c702254635c5d9bfb02b6c97dd3ac9568fc176ff55f242521ea13159b",
+    "hardware/rev-e/Resol_VBus_RevE.kicad_pro": "b6549730d94a1708fbf1d14a84016d7d469b3bd5628d5559ad832aa424daaec9"
+  },
+  "artifacts_sha256": {
+    "fabrication/Resol_VBus_RevE_Gerbers.zip": "191383a37606a8a674d5d608e4816eb946c53ec1d7774918290401de4287ad47",
+    "fabrication/cpl.csv": "8dbcfc0885664a32333a810a958402b2233261cb1b686a46b96b1d6312ddb715",
+    "fabrication/bom.csv": "d50d67a8098fc539a81402addf4236d9c471267dc0884723a84e1ef5edac83c4"
+  },
+  "gerber_archive_members": {
+    "Resol_VBus_RevE-B_Cu.gbl": {
+      "bytes": 97345,
+      "sha256": "47ec2b9216040f8edf5bc2044d28c917c4abe5f1c579cc046935dd347b99112c"
+    },
+    "Resol_VBus_RevE-B_Mask.gbs": {
+      "bytes": 2063,
+      "sha256": "1472ed23286ca7a8a02da476770055136d6a545d3e4908865efddd3943023839"
+    },
+    "Resol_VBus_RevE-B_Silkscreen.gbo": {
+      "bytes": 40966,
+      "sha256": "02cdcb57ea6193646041996ca736a341a896b17106d44cd8ca9852ccb92310b1"
+    },
+    "Resol_VBus_RevE-Edge_Cuts.gm1": {
+      "bytes": 905,
+      "sha256": "d00b98a0a8ec51c5fc5dcfae608146ec3cd3615ffba9605e1b6a24d50fcdcaab"
+    },
+    "Resol_VBus_RevE-F_Cu.gtl": {
+      "bytes": 346269,
+      "sha256": "7d22db56f3063008b21c1548020ce6328516fc33fec893f8e3ca0aea9ceaea8a"
+    },
+    "Resol_VBus_RevE-F_Mask.gts": {
+      "bytes": 7651,
+      "sha256": "97a142d01373feafe12330def3e17bbaf023d8aefc8f961cadc1acb05f8467b4"
+    },
+    "Resol_VBus_RevE-F_Silkscreen.gto": {
+      "bytes": 100647,
+      "sha256": "6861a7cc93d302f5f88ef5a9300bbb7e45519a21496e450068e864351d2d2c7f"
+    },
+    "Resol_VBus_RevE-NPTH.drl": {
+      "bytes": 264,
+      "sha256": "fbc6114f7d2c2b64a843dda39c3d5d6df10b1d810440f59341688b7de0f7cad7"
+    },
+    "Resol_VBus_RevE-PTH.drl": {
+      "bytes": 3063,
+      "sha256": "80f2ad78ec5cec8cde64ffd58d8430bfb7d15fc530d015ad63c3273d14251867"
+    },
+    "Resol_VBus_RevE-job.gbrjob": {
+      "bytes": 2491,
+      "sha256": "89c5c90849cf4372cf6eca500b571f1c5e6274b4032cf1b91d9110d467531fb0"
+    }
+  },
+  "drill_hits": {
+    "PTH": 206,
+    "NPTH": 0
+  },
+  "fitted_references": 38,
+  "front_smt_placements": 35,
+  "erc_violations": 0,
+  "pcb_checks": {
+    "violations": 0,
+    "unconnected_items": 0,
+    "schematic_parity": 0
+  }
+}
