@@ -1,0 +1,74 @@
+{
+  "board": "RESOL_VBus_ECO_RevA",
+  "date": "2026-11-23",
+  "kicad": "10.0.8",
+  "qualification": "CAD-checked pilot fabrication; ECO hardware untested",
+  "source_sha256": {
+    "hardware/eco-rev-a/RESOL_VBus_ECO_RevA.kicad_pcb": "c95e0fedb7219306864f1edb7041de71462bc37443b314d9c07199ba036e7d70",
+    "hardware/eco-rev-a/RESOL_VBus_ECO_RevA.kicad_sch": "29a5b7160f8743d08f54572d9885a9ec3147345609e5cc022724b53399375fc6",
+    "hardware/eco-rev-a/RESOL_VBus_ECO_RevA.kicad_pro": "a9896b93fa1f7cab5fb267d02b99bcd6ce24a8c457afee5456241cda55645101"
+  },
+  "artifacts_sha256": {
+    "fabrication/eco-rev-a/RESOL_VBus_ECO_RevA_Gerbers.zip": "fcb5a4e7e766203e76d35e83a3545b81caf9228cc7c6a5741f5ea122477eae8a",
+    "fabrication/eco-rev-a/cpl.csv": "f886e225d51ec72d00cedc100565405df5ccc66d56f0f554968797267a266ebf",
+    "hardware/eco-rev-a/BOM.csv": "bb55db3811e83b16a44097786575ef64f715be4ef82bb80e2309f7a940d8bb99"
+  },
+  "gerber_archive_members": {
+    "RESOL_VBus_ECO_RevA-B_Cu.gbl": {
+      "bytes": 80608,
+      "sha256": "de9b42353ba6b210f3bdd22c0fc276664041644d4008083a29a3c6c2ee5a65b2"
+    },
+    "RESOL_VBus_ECO_RevA-B_Mask.gbs": {
+      "bytes": 2067,
+      "sha256": "29fd095f236b4ec75ae4175701291d3769db2b4228f2fc3cad3d57b95240ec57"
+    },
+    "RESOL_VBus_ECO_RevA-B_Silkscreen.gbo": {
+      "bytes": 35862,
+      "sha256": "da1c6efdde60858f67af3128211b4e104633764db4dcf4fb990e3c560bead9d1"
+    },
+    "RESOL_VBus_ECO_RevA-Edge_Cuts.gm1": {
+      "bytes": 909,
+      "sha256": "5e9123080d3b1b0368839848f9d700c9f7759420728781393e4bf65b0910bf96"
+    },
+    "RESOL_VBus_ECO_RevA-F_Cu.gtl": {
+      "bytes": 248264,
+      "sha256": "692446b4f1acf5b5b51eda9efd4c2fc98c87ec14e741ad3ba992269aade662c7"
+    },
+    "RESOL_VBus_ECO_RevA-F_Mask.gts": {
+      "bytes": 6135,
+      "sha256": "a1d07ff3be8f67055d044404cb6093be74eeffd4b299ee4e0ae9d48169ee38a4"
+    },
+    "RESOL_VBus_ECO_RevA-F_Paste.gtp": {
+      "bytes": 4778,
+      "sha256": "7caea6be4004c3b934869391fde95ca114058c5fc57847683ad5ba4b65b03f5b"
+    },
+    "RESOL_VBus_ECO_RevA-F_Silkscreen.gto": {
+      "bytes": 87248,
+      "sha256": "626a05f932542413ffc7e7c347e0f920da17536fb278c1832ddc02cd80f50d67"
+    },
+    "RESOL_VBus_ECO_RevA-NPTH.drl": {
+      "bytes": 264,
+      "sha256": "fbc6114f7d2c2b64a843dda39c3d5d6df10b1d810440f59341688b7de0f7cad7"
+    },
+    "RESOL_VBus_ECO_RevA-PTH.drl": {
+      "bytes": 3753,
+      "sha256": "1aa8c0aa66330d9cca29a6bc5b5dd6dfd5b6bb727696807d51446b49f8a8773a"
+    },
+    "RESOL_VBus_ECO_RevA-job.gbrjob": {
+      "bytes": 2659,
+      "sha256": "4de2aa3a21914d28f69423e935de601f8a6d95558bc09a439a94ad5cfe9f05e7"
+    }
+  },
+  "drill_hits": {
+    "PTH": 270,
+    "NPTH": 0
+  },
+  "fitted_references": 29,
+  "front_smt_placements": 26,
+  "erc_violations": 0,
+  "pcb_checks": {
+    "violations": 0,
+    "unconnected_items": 0,
+    "schematic_parity": 0
+  }
+}
