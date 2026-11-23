@@ -2,7 +2,7 @@
 
 The RECOM converter and the UART isolator separate the controller-side circuit from the ESP supply and USB ground. Both external 5 V and USB can power the interface. Use one source at a time.
 
-Only the isolated design has been tested in the field on a DeltaSol CS Plus. The installation used an earlier isolated prototype with a wiring rework. The published Rev E files have their own [CAD validation record](../../docs/validation.md).
+Both the D1 mini and the S3 Mini worked on the isolated Rev D after the comparator wiring rework. The S3 Mini has operated for weeks on a DeltaSol CS Plus. The published Rev E files have their own [CAD validation record](../../docs/validation.md).
 
 | Front | Back |
 |---|---|

@@ -11,7 +11,7 @@ Both versions use a socketed **LOLIN D1 mini or S3 Mini**, a 5 V supply and the 
 | Power and UART | RECOM isolated DC/DC, bus-side regulator and digital isolator | Receiver and TX logic run from the module’s 3.3 V rail |
 | Grounding | ESP/USB ground is separated from the VBus circuit | USB, J1 ground and the negative output of the VBus bridge are connected |
 | Assembly | 35 SMT components | 26 SMT components |
-| Test status | An isolated prototype has operated in the field on a DeltaSol CS Plus | CAD checks passed; first assembled-board and field tests are pending |
+| Test status | D1 mini and S3 Mini tested on reworked Rev D; S3 Mini in service for weeks on a DeltaSol CS Plus | CAD checks passed; first assembled-board and field tests are pending |
 | KiCad and schematic | [Project](hardware/rev-e/Resol_VBus_RevE.kicad_pro) · [PDF](docs/schematic.pdf) | [Project](hardware/eco-rev-a/RESOL_VBus_ECO_RevA.kicad_pro) · [PDF](hardware/eco-rev-a/RESOL_VBus_ECO_RevA.pdf) |
 | Fabrication | [Gerber ZIP](fabrication/Resol_VBus_RevE_Gerbers.zip) · [BOM](fabrication/bom.csv) · [CPL](fabrication/cpl.csv) | [Gerber + stencil ZIP](fabrication/eco-rev-a/RESOL_VBus_ECO_RevA_Gerbers.zip) · [BOM](hardware/eco-rev-a/BOM.csv) · [CPL](fabrication/eco-rev-a/cpl.csv) |
 
@@ -44,12 +44,12 @@ The photograph below shows the earlier isolated prototype used in the installati
 cables. Use either USB power or external 5 V, **never both at once**. Keep
 `GND` and `GND_ISO` separate. This is a low-voltage interface, not a mains input.
 
-## Prototype status
+## Field experience
 
 The target controller is a DeltaSol CS Plus running firmware 1.11, with an
 approximately 20 cm VBus cable.
 
-Only the isolated design has field experience. The photographed unit is an earlier isolated revision that received a small wiring rework. The [Rev E validation record](docs/validation.md) documents the published CAD revision. ECO Rev A is a separate common-ground prototype awaiting hardware validation.
+The photographed board is the isolated Rev D with the comparator wiring corrected by hand. Both modules worked on this board. The [validation record](docs/validation.md) describes the correction in the later isolated layouts and the checks on the published Rev E files.
 
 
 ## Firmware
@@ -58,10 +58,10 @@ VBus uses UART at **9600 baud, 8N1, non-inverted**. TX must idle HIGH; driving i
 LOW enables the bus sink once the bus-side supervisor releases the TX inhibit. Firmware must wait
 for a bus grant before transmitting.
 
-| Module | RX GPIO | TX GPIO | Rev E status |
+| Module | RX GPIO | TX GPIO | Observed on reworked Rev D |
 |---|---:|---:|---|
-| LOLIN D1 mini v4.0.0 (ESP8266) | 13 | 12 | Bench testing pending |
-| LOLIN S3 Mini v1.0.0 | 11 | 13 | Not yet physically tested |
+| LOLIN D1 mini v4.0.0 (ESP8266) | 13 | 12 | Tested and working |
+| LOLIN S3 Mini v1.0.0 | 11 | 13 | In service for weeks |
 
 I am developing the ESPHome TX support separately. This repository contains
 the hardware, not a ready-to-flash firmware image. It does not imply that the

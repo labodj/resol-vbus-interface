@@ -87,5 +87,5 @@ valid telemetry and continuing controller operation. Enable TX only with bus
 arbitration and a known read command for the specific controller. Do not change
 regulation settings as part of a wiring test.
 
-Rev E requires bench checks after assembly. Transient waveforms, EMC, extreme
+Repeat the first-power checks on each newly assembled board. Transient waveforms, EMC, extreme
 temperatures, long cables and all power-up/down sequences have not been qualified.

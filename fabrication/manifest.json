@@ -2,7 +2,7 @@
   "board": "Resol_VBus_RevE",
   "date": "2026-11-23",
   "kicad": "10.0.8",
-  "qualification": "CAD-checked Rev E; field testing applies to an earlier isolated prototype",
+  "qualification": "Rev E CAD checked. Both D1 mini and S3 Mini worked on hand-reworked isolated Rev D; S3 Mini operated for weeks.",
   "source_sha256": {
     "hardware/rev-e/Resol_VBus_RevE.kicad_pcb": "017ea990f4c68947183ede7362482be4c12ad91519c253770fa4c7330e2cc51f",
     "hardware/rev-e/Resol_VBus_RevE.kicad_sch": "c009fb9c702254635c5d9bfb02b6c97dd3ac9568fc176ff55f242521ea13159b",

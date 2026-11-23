@@ -34,7 +34,5 @@ Follow `assembly.md` before connecting a controller.
 
 ## Validation boundary
 
-Saved-source ERC/DRC, physical pin checks and regression tests pass. The public
-review documents applicability and unverified limits. Rev E has not yet been
-manufactured or bench-tested. CAD cleanliness is not thermal, RF, EMC or safety
-certification, and an optional missing 3D model is not physical-fit evidence.
+Saved-source ERC/DRC, physical pin checks and regression tests pass. The [field results](validation.md) cover both modules on the hand-reworked Rev D.
+The Rev E artwork incorporates the corrected comparator connections.

@@ -1,7 +1,16 @@
 # Validation
 
-Rev E passes the CAD checks below. I have not yet assembled or bench-tested
-this revision.
+## Field operation of the isolated interface
+
+Both the LOLIN D1 mini and the LOLIN S3 Mini worked on the isolated Rev D
+after the comparator wiring was corrected by hand. As of 23 November 2026,
+the S3 Mini had been operating for weeks with a DeltaSol CS Plus.
+
+The published isolated PCB is labelled Rev E and includes the corrected U3
+connections listed below. The owner also identifies the isolated Rev F layout
+as incorporating the same Rev D rework. The physical test unit was the
+reworked Rev D. The common-ground ECO Rev A has passed CAD checks and has
+no reported field test.
 
 ## Checks completed on 18 October 2026
 
@@ -54,13 +63,12 @@ The release contains seven Gerber layers, PTH/NPTH drill files and a Gerber
 job file. The Gerber export used `--check-zones` to check and refill zones
 before plotting. The NPTH file is valid and empty: all current holes are plated.
 
-[Checks and limitations](../validation/publication-20261018/review.md) describe
-the release in more detail. The [manifest](../validation/publication-20261018/manifest.json)
+The [18 October review](../validation/publication-20261018/review.md) describes
+that release in more detail. The [manifest](../validation/publication-20261018/manifest.json)
 records file sizes and SHA-256 hashes.
 
-## What still needs testing
+## Limits of the field results
 
-CAD checks do not replace measurements on an assembled board. Rev E still
-needs first-power and functional tests. Thermal performance, RF behavior, EMC,
-long-cable operation, enclosure fit and the S3 Mini have not been fully tested.
+The installation demonstrates module operation with a short VBus cable.
+Thermal limits, RF range, EMC, long cables and fit in other enclosures remain uncharacterized.
 The complete board has no certified safety-isolation rating.

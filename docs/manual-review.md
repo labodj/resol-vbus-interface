@@ -42,5 +42,5 @@ The optional RECOM STEP model is not included. The PCB retains a relative
 reference for local 3D viewing; a missing model does not prevent fabrication.
 See [third-party notices](../THIRD_PARTY.md).
 
-Rev E remains prototype hardware until it has been assembled and tested.
-See [validation](validation.md) for the current results and limits.
+See the [validation record](validation.md) for D1 mini and S3 Mini field results
+on the reworked Rev D and checks specific to the Rev E layout.
